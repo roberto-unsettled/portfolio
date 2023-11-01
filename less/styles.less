@@ -1,0 +1,199 @@
+//main: globals.less
+
+body {
+  color: @color1;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    &:hover{
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+/////animations------------------------------------------------------------
+    
+.animationFade {
+    opacity: 0.1;
+    transition: opacity 0.5s 0.1s;
+}
+.animationFade.animated{
+    opacity: 1;
+}
+
+//start animationBottomToTop -----------
+@topStart:			    -100px;
+@topEnd:			    120px;
+@topEndPlus:			@topEnd  + 10px;
+
+.animatedTopBottomBounce {
+    0% { top:		    @topStart; }
+    80% { top:          @topEndPlus; }
+    100% { top: 	    @topEnd; }
+}
+@keyframes animationTopBottomBounce {
+    .animatedTopBottomBounce;
+}
+@-webkit-keyframes animationTopBottomBounce {
+    .animatedTopBottomBounce;
+}
+@-ms-keyframes animationTopBottomBounce {
+    .animatedTopBottomBounce;
+}
+@-moz-keyframes animationTopBottomBounce {
+    .animatedTopBottomBounce;
+}
+
+//start animationSepia -----------
+@filterStart:			sepia(0.2);
+@filterPlus:            sepia(1);
+@filterEnd:			    sepia(0);
+
+.animatedSepia {
+    0% { filter:		@filterStart; }
+    40% { filter:       @filterPlus; }
+    100% { filter: 	    @filterEnd; }
+}
+@keyframes animationSepia {
+    .animatedSepia;
+}
+@-webkit-keyframes animationSepia {
+    .animatedSepia;
+}
+@-ms-keyframes animationSepia {
+    .animatedSepia;
+}
+@-moz-keyframes animationSepia {
+    .animatedSepia;
+}
+
+// animations Time Line ----
+
+@timeAnimation_1:           0.6s;
+@delayAnimation_1:          0s;
+@timeAnimation_sepia:       2.2s;
+@delayAnimation_sepia:       .8s;
+
+
+
+// animations Time Line ----
+/* ==========================================================================
+User Styles
+========================================================================== */
+
+#total-wrapper {
+    background-color: @colorBgOut;
+    font-family: 'Montserrat', sans-serif;
+}
+.site-wrapper {
+    margin: 0 auto;
+    max-width: (@max-width-site - (@padding-container * 2));
+}
+.site-wrapper-inner {
+    color: @color3;
+}
+.bg-color-1 {
+    background-color: @color1;
+}
+.bg-color-2 {
+    background-color: @color2;
+}
+.bg-color-3 {
+    background-color: @color3;
+}
+.cover {
+    padding: 0;
+}
+.cover-heading {
+    margin: 0;
+}
+.key-word {
+    padding:                0px 5px;
+    display:                inline-flex; //to avoid missalingment with the rest of the text
+    position:               relative;
+    overflow:               hidden;
+    z-index:                1;
+    transition:             all .3s ease .1s; //i change this with JS to give a cascade effect
+    &::before {
+        .absoluteTopLeft(0, -110%);
+        .size(105%, 100%);
+        content:            '';
+        background-color:   @color3;
+        //transition: left .4s ease;
+        transition:         inherit; //how is not in DOM I manage this way to address it
+        z-index:            -1;
+    }
+    &.animated {
+        //color:          @color2;
+        &::before {
+            left:           0;
+        }
+    }//animated
+}//key-word
+
+.key-word-color1 {
+    &.animated {
+    color:                  @color2;
+    }
+}//key-word-color
+
+// .container {
+//     //padding: 0;
+// }
+
+#welcome-section {
+    height:                 80vh;
+    max-height:             592px;
+    padding:                0 @padding-container;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // align-content: center;
+    // align-items: flex-start;
+    background:             url('../img/lache_victoria.png') no-repeat transparent center top;
+    background-size:        cover;
+    filter:		            @filterStart;
+    .animationSimple(animationSepia forwards 1 @timeAnimation_sepia ease-in-out @delayAnimation_sepia);
+    .title {
+        font-family:        'Bebas Neue', sans-serif;
+        font-size:          125px;
+        line-height:        93px;
+        color:              @colorBgImgWelcome;
+        transform:          scale(1, 1.6);
+        width:              60%;
+        position:           absolute;
+        top:                @topStart;
+        opacity:            0;
+        transition:         opacity .5s ease .2s, color .8s ease .8s;
+        &.animated {
+            opacity:        .7;
+            color:          @color2;
+            .animationSimple(animationTopBottomBounce forwards 1 @timeAnimation_1 ease-in-out @delayAnimation_1);
+        }
+    } //title
+    
+}//welcome-section
+.second_title {
+    font-family:            'Bebas Neue', sans-serif;
+    font-size:              90px;
+    line-height:            90px;
+    padding-bottom:         (@padding-container/2);
+}
+.text-regular {
+    font-size:              25px;
+    line-height:            32px;
+    margin-bottom:          (@padding-container/2);
+}
+.section_introduction {
+    padding:                @padding-container;
+}
+
+#microsites {
+    position: relative;
+    overflow: hidden;
+}
+.title-works {
+    .rotateSimple (270);    
+}
