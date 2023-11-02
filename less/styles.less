@@ -153,7 +153,7 @@ User Styles
     // align-content: center;
     // align-items: flex-start;
     background:             url('../img/lache_victoria.png') no-repeat transparent center top;
-    background-size:        auto 100%;
+    background-size:        cover;
     filter:		            @filterStart;
     .animationSimple(animationSepia forwards 1 @timeAnimation_sepia ease-in-out @delayAnimation_sepia);
     .title {
@@ -190,3 +190,10 @@ User Styles
     padding:                @padding-container;
 }
 
+#microsites {
+    position: relative;
+    overflow: hidden;
+}
+.title-works {
+    .rotateSimple (270);    
+}
