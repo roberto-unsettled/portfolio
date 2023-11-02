@@ -25,6 +25,18 @@ $(function() {
 
     //$('.key-word').addClass('animated');
   }, {
+    offset: '65%'
+  });
+
+  $('#microsites').waypoint(function() {
+    var $keyWords = $(this).find('.key-word');
+    
+    $keyWords.each(function(index) {
+      $(this).css('transition','left .4s ease ' + 400*index + 'ms, color .3s ease '+ 400*index + 'ms').addClass('animated');
+  });
+
+    //$('.key-word').addClass('animated');
+  }, {
     offset: '85%'
   });
 
