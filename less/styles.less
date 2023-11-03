@@ -3,14 +3,8 @@
 body {
   color: @color1;
 }
-
-.link {
-    text-decoration: none;
-    color: inherit;
-    &:hover{
-        color: inherit;
-        text-decoration: underline;
-    }
+p {
+    font-weight: 300;
 }
 /////animations------------------------------------------------------------
     
@@ -154,9 +148,17 @@ User Styles
     // }
 }//key-word-color2
 
-// .container {
-//     //padding: 0;
-// }
+.second_title {
+    
+    font-size:              90px;
+    line-height:            90px;
+    padding-bottom:         (@padding-container/2);
+}
+.text-regular {
+    font-size:              25px;
+    line-height:            32px;
+    margin-bottom:          (@padding-container/2);
+}
 
 #welcome-section {
     height:                 80vh;
@@ -190,17 +192,8 @@ User Styles
     } //title
     
 }//welcome-section
-.second_title {
-    
-    font-size:              90px;
-    line-height:            90px;
-    padding-bottom:         (@padding-container/2);
-}
-.text-regular {
-    font-size:              25px;
-    line-height:            32px;
-    margin-bottom:          (@padding-container/2);
-}
+
+
 .section_introduction {
     padding:                @padding-container;
 }
@@ -210,10 +203,7 @@ User Styles
     overflow:               hidden;
     background-color:       #e2ef09;
 }
-.element-list-works {
-    width: 100%;
-    position: relative;
-}
+
 .title-works-container {
     display:                inline-block;
     position:               relative;
@@ -230,27 +220,88 @@ User Styles
     white-space:            nowrap;
     h2 {
         transform:rotate(-90deg) translate(-50%, 50%);
-    display:                inline-block;
-    //position:               relative;
-    font-size:              84px;
-    //line-height:            232%;
-    width:                  100%;
-    height:                 100%;
-    text-align:             center;
-    position:               absolute;
-    top:                    0;
-    left:                   -18px;
-    bottom:                 0;
-    letter-spacing:         17px;
-    line-height:            71%;
-    }
-}
-    .img-work-container{
-        position:           relative;
-        display:            block;
-    }
-
-    .img-work {
-        display: block;
+        display:                    inline-block;
+        //position:               relative;
+        font-size:                  84px;
+        //line-height:            232%;
         width:                      100%;
+        height:                     100%;
+        text-align:                 center;
+        position:                   absolute;
+        top:                        0;
+        left:                       -18px;
+        bottom:                     0;
+        letter-spacing:             17px;
+        line-height:                71%;
     }
+} //title-works
+.microsite-list-element {
+    position:                   relative;
+}
+
+.title-work {
+    font-size:                  30px;
+    transition: font-size .4s ease, line-height .3s ease;
+}
+
+.cta-general {
+    text-decoration:            none;
+    font-weight:                500;
+    transition:                 color .4s ease;
+    .border-radius (@cta-border-radious);
+    &:hover  {
+        color:                  @color2;
+    }
+} //cta-general
+
+.cta-microsites {
+    @variable-color:            @color1;
+    color:                      @variable-color;
+    .size(145px, auto);
+    padding:                    10px;
+    .absoluteBottomRight(30px, 60px);
+    background-color:           spin(@variable-color, 180);
+    &::after{
+        content:                ' ';
+        .border-radiuses (@cta-border-radious, @cta-border-radious, 0, 0);
+        .absoluteBottomRight(0,0);
+        .size(20%,100%);
+        background-color:       lighten(spin(@variable-color, 180), 10%);
+        background-image:       url('../img/arrow-right.svg');
+        background-position:    center;
+        background-repeat:      no-repeat;
+        transition: width       .3s ease;
+    }//after
+    &:hover  {
+        &::after{
+            width:              15%;
+        }
+    }//hover
+} //cta-microsites
+
+
+.img-work-container{
+    position:           relative;
+    display:            block;
+}
+
+.img-work {
+    display:            block;
+    width:              100%;
+}
+.list-key-word {
+    // &:not(:first-child) { 
+    //     &::before {
+        
+    //         border-right: 5px solid greenyellow; 
+    //     } 
+    // }
+} //list-key-word
+
+.list-key-word-element {
+    position: relative;
+    display: inline-block;
+}
+.list-key-word-awards {
+    margin-top: 6px;
+}
