@@ -6,6 +6,9 @@ body {
 p {
     font-weight: 300;
 }
+b, strong {
+    font-weight: 300;
+}
 /////animations------------------------------------------------------------
     
 .animationFade {
@@ -87,6 +90,9 @@ User Styles
 .site-wrapper-inner {
     color: @color3;
 }
+.container-section {
+    padding-bottom: @padding-container;
+}
 .bg-color-1 {
     background-color: @color1;
 }
@@ -164,12 +170,6 @@ User Styles
     height:                 80vh;
     max-height:             592px;
     padding:                0 @padding-container;
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // justify-content: space-between;
-    // align-content: center;
-    // align-items: flex-start;
     background:             url('../img/lache_victoria.png') no-repeat transparent center top;
     background-size:        cover;
     filter:		            @filterStart;
@@ -195,71 +195,77 @@ User Styles
 
 
 .section_introduction {
-    padding:                @padding-container;
+    padding:                    @padding-container @padding-container 0 @padding-container;
 }
 
 #microsites {
-    position:               relative;
-    overflow:               hidden;
-    background-color:       #e2ef09;
+    position:                   relative;
+    overflow:                   hidden;
+    background-color:           @color4;
 }
 
 .title-works-container {
-    display:                inline-block;
-    position:               relative;
+    display:                    inline-block;
+    position:                   relative;
     //transform-origin:       0 50%;
 }
 .title-works {
-    display:                block;
-    position:               absolute;
-    top:                    0;
-    left:                   0;
-    bottom:                 0;
-    width:                  100%; /* line-height of .wrapper div:first-child span */
-    overflow:               hidden;
-    white-space:            nowrap;
+    display:                    block;
+    position:                   absolute;
+    top:                        0;
+    left:                       0;
+    bottom:                     0;
+    width:                      100%; /* line-height of .wrapper div:first-child span */
+    overflow:                   hidden;
+    white-space:                nowrap;
     h2 {
         transform:rotate(-90deg) translate(-50%, 50%);
-        display:                    inline-block;
-        //position:               relative;
+        .absoluteBottomLeft(-260px, -18px);
         font-size:                  84px;
-        //line-height:            232%;
         width:                      100%;
         height:                     100%;
         text-align:                 center;
-        position:                   absolute;
-        top:                        0;
-        left:                       -18px;
-        bottom:                     0;
-        letter-spacing:             17px;
-        line-height:                71%;
+        letter-spacing:             45px;
+        line-height:                52%;
+        color: @color2;
     }
 } //title-works
 .microsite-list-element {
-    position:                   relative;
+    position:                       relative;
+        &:not(:last-child) { 
+            border-bottom:          2px solid @color2;
+        }
+}
+.text-container-work {
+    padding:                        10px 30px 0 20px;
+
+}
+.description-work {
+    line-height:                    124%;
+    margin-bottom:                  9px;
 }
 
 .title-work {
-    font-size:                  30px;
-    transition: font-size .4s ease, line-height .3s ease;
+    font-size:                      30px;
+    //transition:                     font-size .4s ease, line-height .3s ease;
 }
 
 .cta-general {
-    text-decoration:            none;
-    font-weight:                500;
-    transition:                 color .4s ease;
+    text-decoration:                none;
+    font-weight:                    500;
+    transition:                     color .4s ease;
     .border-radius (@cta-border-radious);
     &:hover  {
-        color:                  @color2;
+        color:                      @color2;
     }
 } //cta-general
 
 .cta-microsites {
     @variable-color:            @color1;
     color:                      @variable-color;
+    .absoluteBottomRight(17px, 60px);
     .size(145px, auto);
     padding:                    10px;
-    .absoluteBottomRight(30px, 60px);
     background-color:           spin(@variable-color, 180);
     &::after{
         content:                ' ';
@@ -290,12 +296,10 @@ User Styles
     width:              100%;
 }
 .list-key-word {
-    // &:not(:first-child) { 
-    //     &::before {
-        
-    //         border-right: 5px solid greenyellow; 
-    //     } 
-    // }
+    .key-word {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
 } //list-key-word
 
 .list-key-word-element {
