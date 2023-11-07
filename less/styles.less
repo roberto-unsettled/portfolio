@@ -357,10 +357,11 @@ User Styles
 }
 
 .cta-banner {
+    .absoluteTopRight(50%, 60px);
+    display: none;
     width:                          109px;
     @variable-color:                @color5;
     color:                          @variable-color;
-    .absoluteTopRight(50%, 60px);
     background-color:               spin(@variable-color, 180);
     &::after{
         background-color:           lighten(spin(@variable-color, 180), 10%);

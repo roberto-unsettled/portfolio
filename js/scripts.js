@@ -1,13 +1,30 @@
 // WAYPOINTS
 $(function() {
   
-    $('.waitingFor-animationFade').addClass('animationFade');
+  function animatingCSS($listToAnimate){
+    
+      $listToAnimate.find('.key-word').each(function(index) {
+        $(this).css('transition','left .4s ease ' + 400*index + 'ms, color .3s ease '+ 400*index + 'ms').addClass('animated');
+      });
+
+  }//animatingCSS
+
+  function animatingCascade(listsToAnimate){
+    listsToAnimate.each(function(index){
+      var $this = $(this);
+      animatingCSS($this);
+    });
+   
+  }
+  
+  $('.waitingFor-animationFade').addClass('animationFade');
 
   // $('#hello').waypoint(function() {
   //   $('#hello .underline').addClass('active');
   // }, {
   //   offset: '85%'
   // });
+
 
   $('#welcome-section').waypoint(function() {
     $('#welcome-title').addClass('animated');
@@ -16,38 +33,26 @@ $(function() {
   });
 
   $('#section_introduction').waypoint(function() {
-    var $keyWords = $(this).find('.key-word');
-    
-    $keyWords.each(function(index) {
-      $(this).css('transition','left .4s ease ' + 400*index + 'ms, color .3s ease '+ 400*index + 'ms').addClass('animated');
-      //console.log($(this));
-  });
-
-    //$('.key-word').addClass('animated');
+    var $keyWords = $(this).find('.text-regular');
+    animatingCSS($keyWords);
+  
   }, {
     offset: '65%'
   });
 
   $('#microsites').waypoint(function() {
-    var $keyWords = $(this).find('.key-word');
-    
-    $keyWords.each(function(index) {
-      $(this).css('transition','left .4s ease ' + 400*index + 'ms, color .3s ease '+ 400*index + 'ms').addClass('animated');
-  });
 
-    //$('.key-word').addClass('animated');
+    var $keyWords = $(this).find('.list-key-word');
+    animatingCascade($keyWords);
+
   }, {
     offset: '85%'
   });
 
   $('#banners').waypoint(function() {
-    var $keyWords = $(this).find('.key-word');
+    var $keyWords = $(this).find('.list-key-word');
+    animatingCascade($keyWords);
     
-    $keyWords.each(function(index) {
-      $(this).css('transition','left .4s ease ' + 400*index + 'ms, color .3s ease '+ 400*index + 'ms').addClass('animated');
-  });
-
-    //$('.key-word').addClass('animated');
   }, {
     offset: '85%'
   });
