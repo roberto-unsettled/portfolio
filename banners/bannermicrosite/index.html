@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>320x480</title>
+    <link type="text/css" href="css/style.css" rel="stylesheet" media="all" />
+    <script type="text/javascript">			
+		
+		function startAd() {
+			document.getElementById("ad").style.visibility = "visible";
+			startAnimation();
+		}
+		
+		function startAnimation() {		
+			var elements = document.getElementsByClassName('animado');
+			console.log(elements.length);
+
+			for (var i=0; i<elements.length; i++) {			
+				elements[i].style.animationPlayState = "running";
+				elements[i].style.webkitAnimationPlayState = "running";
+				elements[i].style.MozAnimationPlayState = "running";
+			}
+			
+			setTimeout(function() {
+				console.log('restart');
+				stopAnimation();
+			}, 15400);
+			
+		}
+		
+		function stopAnimation() {		
+			var elements = document.getElementsByClassName('animado');		
+			for (var i=0; i<elements.length; i++) {
+				var elm = elements[i];
+				var newone = elm.cloneNode(true);
+				elm.parentNode.replaceChild(newone, elm);
+			}
+			startAnimation();
+		}
+    
+    </script>
+</head>
+<!-- <body onload="startAd()"> -->
+<body>
+    <div id="ad">
+    <!-- <div id="contenedor" onclick="javascript:handleClickthroughButtonClick()"> -->
+		<div id="contenedor"></div>
+		<!--mascara-->
+		<div id="logoSeat" class="overAll"></div>
+		<div id="footer" class="overAll"></div>
+		<div id="close" class="overAll"></div>
+		<!--mascara-->
+		
+		<div id="homeSection" class="secuencia">
+			<div class="textoHome11 animado"></div>
+			<div class="textoHome12 animado"></div>
+			
+			<!-- <div id="motores" class="homeMenu1 homeMenu animado">
+				<span class="plus"></span>
+			</div> -->
+			<div id="fullLink" class="homeMenu2 homeMenu animado">
+				<span class="plus"></span>
+			</div>
+			<div id="colorPack" class="homeMenu3 homeMenu animado">
+				<span class="plus"></span>
+			</div>
+			
+			<div class="cta animado"></div>
+				
+			<div id="pive" class="animado"></div>
+			
+			<div id="legalContainer" class="animado">
+				<p class="animado">
+					Consumo medio combinado de 3,4 a 5,2 l/100  km. Emisiones de CO2 de 88 a 118 g/km. Consulta condiciones en seat.es
+				</p>
+			</div>
+		</div><!--home-->
+		
+		<div id="motoresSection" class="secuencia botonMotor0"><!-- en la primer intereaccion brillo-->
+			<div id="motoresSectionFrom" class="backButton animado"></div>
+			
+			<div id="salpicaderoBrillo"></div>
+			
+			<div class="textoMotores11 animado"></div>
+			<div class="textoMotores12 animado"></div>
+			<div id="agujaIzquierda" class="aguja animado"></div><!--mueve con boton1-->
+			<div id="agujaDerecha" class="aguja animado"></div><!--mueve con boton2-->
+			<div id="gasolinera"></div><!--brilla con boton3-->
+			<div id="kilometros"></div><!--brilla con boton4-->
+			
+			<div id="listaBotones"><!-- usar   transform: skewX(-10deg); -->
+				<div id="botonMotor1" class="botonMotor">
+					<span class="texto"></span>
+				</div>
+				<div id="botonMotor2" class="botonMotor">
+					<span class="texto"></span>
+				</div>
+				<div id="botonMotor3" class="botonMotor">
+					<span class="texto"></span>
+				</div>
+				<div id="botonMotor4" class="botonMotor">
+					<span class="texto"></span>
+				</div>
+			</div>
+			
+		</div><!--motores-->
+		
+		<div id="fullLinkSection" class="secuencia">
+			<div id="fullLinkSectionFrom" class="backButton animado"></div>
+			
+			<div class="textoFullLink11 animado"></div>
+			<div class="textoFullLink12 animado"></div>
+			
+			<div id="screen" class="animado">
+				<div id="screen2" class="animado"></div>
+			</div>
+			
+			<div id="iphone" class="animado">
+				<div id="iphoneSeat" class="animado"></div>
+			</div>
+			<div id="cable" class="animado"></div>
+			
+			<div class="buttonContainer animado">
+				<div id="boton1" class="selectButton animado">
+					<div class="title">
+						<div class="trigger">
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="information"></div>
+				</div><!--button-->
+				<div id="boton2" class="selectButton animado">
+					<div class="title">
+						<div class="trigger">
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="information"></div>
+				</div><!--button-->
+				<div id="boton3" class="selectButton animado">
+					<div class="title">
+						<div class="trigger">
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="information"></div>
+				</div><!--button-->
+				<div id="boton4" class="selectButton active animado">
+					<div class="title">
+						<div class="trigger">
+							<div class="circle"></div>
+						</div>
+					</div>
+					<div class="information"></div>
+				</div><!--button-->
+			</div><!--buttonContainer-->
+			<div class="nameColor animado"></div>
+			
+		</div><!--fullLink-->
+		<div id="colorPackSection" class="secuencia color1">
+				<div id="colorPackSectionFrom" class="backButton animado"></div>
+			
+			<div class="textoColor11 animado"></div>
+			
+			<div id="color1" class="colorButton active animado"><span class="insideColor"></span></div>
+			<div id="color2" class="colorButton animado"><span class="insideColor"></span></div>
+			<div id="color3" class="colorButton animado"><span class="insideColor"></span></div>
+			
+			<div class="nameColor animado"></div>
+			
+		</div><!--colorPack-->
+ 	</div><!--contenedor-->
+	</div>
+	
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script>
+		if (!window.jQuery) {
+			var script = document.createElement("script");
+			script.setAttribute("type", "text/javascript");
+			script.setAttribute("src", "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js");
+			document.getElementsByTagName('head')[0].appendChild(script);
+		}
+
+	</script>
+	<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

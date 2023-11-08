@@ -1,6 +1,27 @@
 // WAYPOINTS
 $(function() {
+  $('#banners .img-work-container').on('click', function(){
+    var $this = $(this);
+    var bannerH = $this.attr('data-banner-height'),
+        bannerW = $this.attr('data-banner-weight'),
+        bannerUrl = $this.attr('data-banner-url');
+
+    iframeHTML= '<iframe id="inlineFrameExample" width="'+ bannerW +'" height="'+ bannerH +'" src="'+ bannerUrl +'"></iframe>';
+    $('#banners-list-container .overlay .htmlContainer').html(iframeHTML);
+    $('#banners-list-container .overlay').addClass('visible');
+
+     console.log('click' + bannerH);
+  });
+
   
+  $('.backGround').on('click',function(){
+    $('#banners-list-container .overlay').removeClass('visible');
+    $('#banners-list-container .overlay .htmlContainer').html('');
+    //two clases, one to happen other to appear maybe
+  });
+
+
+
   function animatingCSS($listToAnimate){
     
       $listToAnimate.find('.key-word').each(function(index) {
@@ -15,53 +36,34 @@ $(function() {
       animatingCSS($this);
     });
    
+  }  
+
+var waypoints = $('#welcome-section, #banners').waypoint({
+  handler: function(direction) {
+    $('#' + this.element.id).addClass('animated')
+    //console.log(this.element.id + ' hit')
   }
-  
-  $('.waitingFor-animationFade').addClass('animationFade');
+})
 
-  // $('#hello').waypoint(function() {
-  //   $('#hello .underline').addClass('active');
-  // }, {
-  //   offset: '85%'
-  // });
-
-
-  $('#welcome-section').waypoint(function() {
-    $('#welcome-title').addClass('animated');
-  }, {
-    offset: '85%'
-  });
-
-  $('#section_introduction').waypoint(function() {
-    var $keyWords = $(this).find('.text-regular');
+var waypoints = $('#section_introduction').waypoint({
+  handler: function(direction) {
+    var $keyWords = $('#' + this.element.id).find('.text-regular');
     animatingCSS($keyWords);
-  
-  }, {
-    offset: '65%'
-  });
+    //console.log(this.element.id + ' hit')
+  },
+  offset: '70%'
+})
 
-  $('#microsites').waypoint(function() {
+var waypoints = $('#microsites, #banners').waypoint({
+  handler: function(direction) {
+    var $this = $('#' + this.element.id);
+    $this.addClass('animated');
+    animatingCascade($this.find('.list-key-word'));
+    //console.log(this.element.id + ' hit')
+  },
+  offset: '75%'
+})
 
-    var $keyWords = $(this).find('.list-key-word');
-    animatingCascade($keyWords);
-
-  }, {
-    offset: '85%'
-  });
-
-  $('#banners').waypoint(function() {
-    var $keyWords = $(this).find('.list-key-word');
-    animatingCascade($keyWords);
-    
-  }, {
-    offset: '85%'
-  });
-
-  $('#w6').waypoint(function() {
-    $('#w6').addClass('animated');
-  }, {
-    offset: '85%'
-  });
   
 });
 

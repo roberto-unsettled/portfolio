@@ -16,7 +16,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
   <!-- /Bootstrap CSS -->
-  <link href="css/styles.css?v=0.4" rel="stylesheet">
+  <link href="css/styles.css?v=0.5" rel="stylesheet">
 
 <!-- Primary Meta Tags -->
 <meta property="og:image" content="https://uzc.dreamhosters.com/work/portfolio/img/social_share.jpg">
@@ -74,7 +74,9 @@
             <ul class="microsites-list col-11" title="microsites">
               <li class="microsite-list-element row g-0">
                 <div class="img-work-container col-2">
-                  <img src="./img/micro_libero.png" class="img-work" alt="Microsite libero alzheimer campaing" />
+                  <a href="/." title="visit a microsite" target="_blank" class="cta-img">
+                    <img src="./img/micro_libero.png" class="img-work" alt="Microsite libero alzheimer campaing" />
+                  </a>
                 </div>
                 <div class="text-container-work col-10">
                   <h3 class="title-general title-work">
@@ -117,7 +119,9 @@
               </li> <!-- /microsite-list-element 1-->
               <li class="microsite-list-element row g-0">
                 <div class="img-work-container col-2">
-                  <img src="./img/micro_missing.png" class="img-work" alt="Microsite scrabble missing ñ" />
+                  <a href="/." title="visit a microsite" target="_blank" class="cta-img">
+                    <img src="./img/micro_missing.png" class="img-work" alt="Microsite scrabble missing ñ" />
+                  </a>
                 </div>
                 <div class="text-container-work col-10">
                   <h3 class="title-general title-work">
@@ -156,7 +160,9 @@
               </li> <!-- /microsite-list-element 2-->
               <li class="microsite-list-element row g-0">
                 <div class="img-work-container col-2">
-                  <img src="./img/micro_ibiza.png" class="img-work" alt="Microsite landing SEAT Ibiza" />
+                  <a href="/." title="visit a microsite" target="_blank" class="cta-img">
+                    <img src="./img/micro_ibiza.png" class="img-work" alt="Microsite landing SEAT Ibiza" />
+                  </a>
                 </div>
                 <div class="text-container-work col-10">
                   <h3 class="title-general title-work">
@@ -187,7 +193,9 @@
               </li> <!-- /microsite-list-element 3-->
               <li class="microsite-list-element row g-0">
                 <div class="img-work-container col-2">
-                  <img src="./img/micro_elite.png" class="img-work" alt="Wordpress site for Elite Media Will" />
+                  <a href="https://elitemediawill.com/" title="visit a microsite" target="_blank" class="cta-img">
+                    <img src="./img/micro_elite.png" class="img-work" alt="Wordpress site for Elite Media Will" />
+                  </a>
                 </div>
                 <div class="text-container-work col-10">
                   <h3 class="title-general title-work">
@@ -229,11 +237,16 @@
         <h2>Banners</h2>
       </span>
     </div><!-- title-works -->
-    <div class="banners-list-container col-11">
+    <div id="banners-list-container" class="banners-list-container col-11">
+      <div class="overlay">
+        <div class="backGround"></div>
+        <div class="htmlContainer"></div>
+        </div><!-- overLay -->
     <ul class="banners-list row g-0" title="banners">
       <li class="banners-list-element col-6">
-        <div class="img-work-container">
-          <img src="./img/banner_1.png" class="img-work" alt="Microsite libero alzheimer campaing" />
+        <div class="img-work-container" data-banner-weight='320' data-banner-height='480' data-banner-url="./banners/animation5d320x480/index.html">
+          <img src="./img/banner_1.png" class="img-work img-banner" alt="Microsite libero alzheimer campaing" />
+          <span class="playButton"></span>
         </div>
         <div class="text-container-work">
           <h3 class="title-general title-work">
@@ -265,8 +278,9 @@
         </div><!-- /text-container-work -->
       </li> <!-- /microsite-list-element 1-->
       <li class="banners-list-element col-6">
-        <div class="img-work-container">
-          <img src="./img/banner_2.png" class="img-work" alt="Microsite scrabble missing ñ" />
+        <div class="img-work-container" data-banner-weight='320' data-banner-height='480' data-banner-url="./banners/bannermicrosite/index.html">
+          <img src="./img/banner_2.png" class="img-work img-banner" alt="animated banner" />
+          <span class="playButton"></span>
         </div>
         <div class="text-container-work">
           <h3 class="title-general title-work">
@@ -296,15 +310,16 @@
             </li>
           </ul><!-- /list-key-word-technology -->
 
-          <a href="./" title="visit a microsite" target="_blank" class="cta-general cta-banner">Banner</a>
+          <!-- <a href="./" title="visit a microsite" target="_blank" class="cta-general cta-banner">Banner</a> -->
 
         </div><!-- /text-container-work -->
       </li> <!-- /microsite-list-element 2-->
       <li class="banners-list-element col-12">
-        <div class="img-work-container big-banner">
-          <img src="./img/banner_3.png" class="img-work" alt="Microsite landing SEAT Ibiza" />
+        <div class="img-work-container big-banner" data-banner-weight='970' data-banner-height='250' data-banner-url="./banners/youtubeRitchConnect/index.html">
+          <img src="./img/banner_3.png" class="img-work img-banner" alt="Youtube Rich Media" />
+          <span class="playButton"></span>
         </div>
-        <div class="text-container-work">
+        <div class="text-container-work big-banner-text-container">
           <h3 class="title-general title-work">
             Youtube Rich Media
           </h3><!-- /title-work-->
@@ -327,7 +342,7 @@
             </li>
           </ul><!-- /list-key-word-technology -->
 
-          <a href="./" title="visit a microsite" target="_blank" class="cta-general cta-microsites">Visit the site</a>
+          <!-- <a href="./" title="visit a microsite" target="_blank" class="cta-general cta-microsites">Visit the site</a> -->
 
         </div><!-- /text-container-work -->
       </li> <!-- /banners-list-element 3-->
@@ -348,10 +363,12 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <!--    <script src="js/jquery.localize.min.js"></script>-->
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/scripts.js?v=0.4"></script>
+    <!-- <script src="js/waypoints.min.js"></script> -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/scripts.js?v=0.5"></script>
 </body>
 
 </html>

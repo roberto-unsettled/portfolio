@@ -291,6 +291,7 @@ User Styles
 .img-work-container{
     position:                       relative;
     display:                        block;
+    cursor:                         pointer;
 }
 
 .img-work {
@@ -310,8 +311,8 @@ User Styles
 .microsites {
     .title-works {
         h2 {
-            letter-spacing:         45px;
-            bottom:                 -260px;
+            letter-spacing:         46px;
+            bottom:                 -262px;
         } //h2
     }//title-works
     .list-key-word-element {
@@ -320,10 +321,13 @@ User Styles
     }//list-keyword-element
 }//microsites
 #banners {
+    @variable-color:                @color4;
     position:                       relative;
     overflow:                       hidden;
-    background-color:               @color5;
-}
+    //background-color:               @color5;
+    background-color:               spin(@variable-color, -17);
+}//#Banners
+
 @paddingBanners:                    (@padding-container/4);
 .banners {
 
@@ -337,8 +341,8 @@ User Styles
         .size(970px,250px);
     }
     .title-works h2 {
-        bottom:                     -419px;
-        letter-spacing:             132px;
+        bottom:                     -407px;
+        letter-spacing:             128px;
     }
     .list-key-word-technology {
         .absoluteTopRight(@paddingBanners,0);
@@ -349,21 +353,91 @@ User Styles
 
     }
 } //banners
+.banners-list-container {
+    position:                       relative;
+    overflow:                       hidden;
+}
+.big-banner-text-container {
+        position:                   relative;
+    .list-key-word-technology{
+        //position:                   absolute;
+        //top:                        15px;
+        right:                      85px;
+        width:                      40%;
+        text-align:                 right;
+        
+        
+        .list-key-word-element {
+            display:                inline-block;
+        }
+    }
+}
 
 .banners-list-element {
     position:                       relative;
     overflow:                       hidden;
     padding:                        @paddingBanners 0;
 }
+.playButton {
+    .size(100%,100%);
+    .absoluteTopLeft(0,0);
+    background-position:                center center;
+    background-repeat:                  no-repeat;
+    background-size:                    100px 100px;
+    background-image:                   url('../img/play-button.svg');
+    background-color:                   transparent;
+    transition:                         transform .3s ease .1s;
+    transform:                          scale(0);
+    z-index:                            40;
+}
+.animated {
+    .playButton {
+        transform:                      scale(1);
+        &:hover {
+            transform:                      scale(1.2);
+        }
+    }
+}//animated
 
 .cta-banner {
-    .absoluteTopRight(50%, 60px);
+    // .absoluteTopRight(50%, 60px);
     display: none;
-    width:                          109px;
-    @variable-color:                @color5;
-    color:                          @variable-color;
-    background-color:               spin(@variable-color, 180);
-    &::after{
-        background-color:           lighten(spin(@variable-color, 180), 10%);
-    }//after
+    // width:                          109px;
+    // @variable-color:                @color5;
+    // color:                          @variable-color;
+    // background-color:               spin(@variable-color, -17);
+    // &::after{
+    //     background-color:           lighten(spin(@variable-color, -17), 10%);
+    // }//after
 } //cta-microsites
+
+.overlay {
+    .size(100%,100%);
+    .absoluteTopLeft(0,0);
+    display: none;
+    opacity:                            0;
+    transition:                         opacity .3s ease;
+    z-index:                            50;
+    &.visible{
+        display:                        block;
+        opacity:                        1;
+    }
+}//overlay
+
+.backGround {
+    .size(100%,100%);
+    .absoluteTopLeft(0,0);
+    background-color:                   @colorBgOut;
+    background-position:                60px 60px;
+    background-repeat:                  no-repeat;
+    background-size:                    50px 50px;
+    background-image:                   url('../img/cross-close.svg');
+    opacity:                            .9;
+    z-index:                            60;
+    cursor:                             pointer;
+}
+.htmlContainer {
+    z-index:                            80;
+    .absoluteTopLeft(50%,50%);
+    transform: translate(-50%, -50%);
+}

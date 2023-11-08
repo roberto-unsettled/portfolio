@@ -1,0 +1,931 @@
+//main: globals.less
+//@import "globals.less";
+
+@delay11:						300ms; //texto1 In 
+@time11:						500ms;
+@delay12:           @delay11 + @time11 + 300;// texto22 fadeIn
+@time12:            700ms;
+@delay13:           @delay12 + @time12 + 100;// menuPlus 1
+@time13:            200ms;
+@delay14:           @delay13 + @time13 + 300;// menuPlus 2
+@time14:            200ms;
+@delay15:           @delay14 + @time14 + 300;// menuPlus 3
+@time15:            200ms;
+@delay16:           @delay15 + @time15 + 600; //cta left to right
+@time16:            400ms;
+
+@delay17:           @delay16 + @time16 + 600; //pive
+@time17:            700ms;
+@delay18:           @delay17 + @time17 + 0; //legal
+@time18:            5700ms;
+
+@delay1:            @delay16 + @time16 + 400;// moveButtons
+@time1:             2800ms;
+
+@delay21:           200ms; //img Iphone In
+@time21:            900ms;
+@delay22:           @delay21 + @time21 + 200;// cable in
+@time22:            600ms;
+@delay23:           @delay22 + @time22 + 200;// cable up
+@time23:            600ms;
+@delay24:           @delay23 + @time23 + 200;// IphoneSEat In and Screen Changes to SEAT
+@time24:            600ms;
+
+@delay2:            @delay24 + @time24 + 200;// Iphone, screen SEAt y cable OUT 
+@time2:             500ms;
+
+@delay210:            @delay2 + @time2 + 200;// textofullLink1 
+@time210:             500ms;
+@delay211:            @delay210 + @time210 + 200;// textofullLink2 
+@time211:             500ms;
+@delay212:            @delay211 + @time211 + 400;// button container
+@time212:             500ms;
+@delay213:            @delay212 + @time212 + 400;// go home
+@time213:             500ms;
+
+@delay31:						200ms; //texto1 colorPack
+@time31:						700ms;
+@delay32:           @delay31 + @time31 + 400;// texto22 fadeIn
+@time32:            600ms;
+@delay33:           @delay32 + @time32 + 200;// texto22 fadeIn
+@time33:            600ms;
+@delay34:           @delay33 + @time33 + 200;// texto22 fadeIn
+@time34:            600ms;
+@delay35:           @delay34 + @time34 + 200;// texto22 fadeIn
+@time35:            600ms;
+@delay36:           @delay35 + @time35 + 200;// texto22 fadeIn
+@time36:            600ms;
+
+@delay3:            @delay36 + @time36;// 
+@time3:             0ms;
+
+//START: ChangeBgFin
+@leftStart:			  -190px;
+@leftEnd:			    57px;
+@leftEndPlus:			@leftEnd + 6px;
+
+.animatedLeftToRightOpacity {
+    0% { left:		@leftStart; }
+    10% { .opacity( 0.1 ); }
+    80% { .opacity( 1 ); left: @leftEndPlus; }
+    100% { left: 	@leftEnd; .opacity( 1 ); }
+}
+@keyframes animationLeftToRightOpacity {
+    .animatedLeftToRightOpacity;
+}
+@-webkit-keyframes animationLeftToRightOpacity {
+    .animatedLeftToRightOpacity;
+}
+@-ms-keyframes animationLeftToRightOpacity {
+    .animatedLeftToRightOpacity;
+}
+@-moz-keyframes animationLeftToRightOpacity {
+    .animatedLeftToRightOpacity;
+}
+
+//END: animationLeftToRight
+
+//START: animationLeftToRightOpacityCta
+@leftStartCta:			  -100px;
+@leftEndCta:			    9px;
+@leftEndPlusCta:			@leftEndCta + 9px;
+
+.animatedLeftToRightOpacityCta {
+    0% { left:		@leftStartCta; }
+    10% { .opacity( 0.1 ); }
+    80% { .opacity( 1 ); left: @leftEndPlusCta; }
+    100% { left: 	@leftEndCta; .opacity( 1 ); }
+}
+@keyframes animationLeftToRightOpacityCta {
+    .animatedLeftToRightOpacityCta;
+}
+@-webkit-keyframes animationLeftToRightOpacityCta {
+    .animatedLeftToRightOpacityCta;
+}
+@-ms-keyframes animationLeftToRightOpacityCta {
+    .animatedLeftToRightOpacityCta;
+}
+@-moz-keyframes animationLeftToRightOpacityCta {
+    .animatedLeftToRightOpacityCta;
+}
+
+//END: animationLeftToRightOpacityCta
+
+.animatedOut{
+    0% { .opacity(1); }
+    70% { .opacity(1); }
+    80% { .opacity(0.6); }
+    90% { .opacity(0.3); }
+    100% { .opacity(0); }
+}
+@keyframes animationOut {
+    .animatedOut;
+}
+@-webkit-keyframes animationOut {
+    .animatedOut;
+}
+@-ms-keyframes animationOut {
+    .animatedOut;
+}
+@-moz-keyframes animationOut {
+    .animatedOut;
+}
+//animated OUT -----------------------------
+
+.animatedIn{
+    from { .opacity(0); }
+    to { .opacity(1); }
+}
+@keyframes animationIn {
+    .animatedIn;
+}
+@-webkit-keyframes animationIn {
+    .animatedIn;
+}
+@-ms-keyframes animationIn {
+    .animatedIn;
+}
+@-moz-keyframes animationIn {
+    .animatedIn;
+}
+
+//anitmated IN ----------------------
+
+@startLegal:			          300px;
+.animatedLegal {
+    0% { left:		@startLegal; }
+    100% { left: 	-@startLegal - 250px; }
+}
+@keyframes animationLegal {
+    .animatedLegal;
+}
+@-webkit-keyframes animationLegal {
+    .animatedLegal;
+}
+@-ms-keyframes animationLegal {
+    .animatedLegal;
+}
+@-moz-keyframes animationLegal {
+    .animatedLegal;
+}
+
+//animatedLegal -----------------------
+
+///------------BgChange Vertical
+@backgroundVerticalStart:                 -40px;
+.animatedBackgroundVertica{
+    from {   background-position:   center @backgroundVerticalStart;  }
+    to {     background-position:   center bottom; }
+}
+@keyframes animationBackgroundVertica {
+    .animatedBackgroundVertica;
+}
+@-webkit-keyframes animationBackgroundVertica {
+    .animatedBackgroundVertica;
+}
+@-ms-keyframes animationBackgroundVertica {
+    .animatedBackgroundVertica;
+}
+@-moz-keyframes animationBackgroundVertica {
+    .animatedBackgroundVertica;
+}
+
+
+//START: animationLeftToRightOpacityColor1
+@leftStartColor1:			  -100px;
+@leftEndColor1:			    90px;
+@leftEndPlusColor1:			@leftEndColor1 + 3px;
+
+.animatedLeftToRightOpacityColor1 {
+    0% { left:		@leftStartColor1; }
+    10% { .opacity( 0.1 ); }
+    80% { .opacity( 1 ); left: @leftEndPlusColor1; }
+    100% { left: 	@leftEndColor1; .opacity( 1 ); }
+}
+@keyframes animationLeftToRightOpacityColor1 {
+    .animatedLeftToRightOpacityColor1;
+}
+@-webkit-keyframes animationLeftToRightOpacityColor1 {
+    .animatedLeftToRightOpacityColor1;
+}
+@-ms-keyframes animationLeftToRightOpacityColor1 {
+    .animatedLeftToRightOpacityColor1;
+}
+@-moz-keyframes animationLeftToRightOpacityColor1 {
+    .animatedLeftToRightOpacityColor1;
+}
+
+//START: animationLeftToRightOpacityColor2
+@leftStartColor2:			  -100px;
+@leftEndColor2:			    140px;
+@leftEndPlusColor2:			@leftEndColor2 + 3px;
+
+.animatedLeftToRightOpacityColor2 {
+    0% { left:		@leftStartColor2; }
+    10% { .opacity( 0.1 ); }
+    80% { .opacity( 1 ); left: @leftEndPlusColor2; }
+    100% { left: 	@leftEndColor2; .opacity( 1 ); }
+}
+@keyframes animationLeftToRightOpacityColor2 {
+    .animatedLeftToRightOpacityColor2;
+}
+@-webkit-keyframes animationLeftToRightOpacityColor2 {
+    .animatedLeftToRightOpacityColor2;
+}
+@-ms-keyframes animationLeftToRightOpacityColor2 {
+    .animatedLeftToRightOpacityColor2;
+}
+@-moz-keyframes animationLeftToRightOpacityColor2 {
+    .animatedLeftToRightOpacityColor2;
+}
+//START: animationLeftToRightOpacityColor3
+@leftStartColor3:			  -100px;
+@leftEndColor3:			    190px;
+@leftEndPlusColor3:			@leftEndColor3 + 3px;
+
+.animatedLeftToRightOpacityColor3 {
+    0% { left:		@leftStartColor3; }
+    10% { .opacity( 0.1 ); }
+    80% { .opacity( 1 ); left: @leftEndPlusColor3; }
+    100% { left: 	@leftEndColor3; .opacity( 1 ); }
+}
+@keyframes animationLeftToRightOpacityColor3 {
+    .animatedLeftToRightOpacityColor3;
+}
+@-webkit-keyframes animationLeftToRightOpacityColor3 {
+    .animatedLeftToRightOpacityColor3;
+}
+@-ms-keyframes animationLeftToRightOpacityColor3 {
+    .animatedLeftToRightOpacityColor3;
+}
+@-moz-keyframes animationLeftToRightOpacityColor3 {
+    .animatedLeftToRightOpacityColor3;
+}
+
+//start animationBottomToTop -----------
+@bottomStart:			  -6px;
+@bottomEnd:			    9px;
+@bottomEndPlus:			@bottomEnd  + 1px;
+
+.animatedBottomToTop {
+    0% { bottom:		@bottomStart; }
+    80% { bottom:   @bottomEndPlus; }
+    100% { bottom: 	@bottomEnd; }
+}
+@keyframes animationBottomToTop {
+    .animatedBottomToTop;
+}
+@-webkit-keyframes animationBottomToTop {
+    .animatedBottomToTop;
+}
+@-ms-keyframes animationBottomToTop {
+    .animatedBottomToTop;
+}
+@-moz-keyframes animationBottomToTop {
+    .animatedBottomToTop;
+}
+
+//start animationBottomToTop -----------
+
+// .animatedHome1 {
+//     0% { 
+//       top:  187px;
+//       left: 56px; 
+//       }
+//     25% { 
+//       top:  190px;
+//       left: 60px; 
+//       }
+//     50% { 
+//       top:  187px;
+//       left: 63px; 
+//       }
+//     75% { 
+//       top:  184px;
+//       left: 56px; 
+//       }
+//     100% { 
+//       top:  187px;
+//       left: 56px; 
+//       }
+// }
+// @keyframes animationHome1 {
+//     .animatedHome1;
+// }
+// @-webkit-keyframes animationHome1 {
+//     .animatedHome1;
+// }
+// @-ms-keyframes animationHome1 {
+//     .animatedHome1;
+// }
+// @-moz-keyframes animationHome1 {
+//     .animatedHome1;
+// }
+
+.animatedScaleBig {
+  0% { transform: scale(1); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+@keyframes animationScaleBig {
+  .animatedScaleBig;
+}
+
+
+body {
+  background: #fff;
+}
+
+@width:                                                 320px;
+@height:                                                480px;
+@border:                                                3px;
+
+@widthBanner:                                           @width - ( @border * 2 );
+@heightBanner:                                          @height - ( @border * 2 );
+
+body {
+  background: grey;
+}
+
+#contenedor {
+    position:                                               relative;
+    width:                                                  @widthBanner;
+    height:                                                 @heightBanner;
+    //border:                                                 @border solid white;
+    overflow:                                               hidden;
+    //cursor:                                                 pointer;
+} //contenedor
+
+.secuencia {
+  .absoluteTopLeft( 0,0 );
+  width:                                                    100%;
+  height:                                                   100%;
+  z-index:                                                  40;
+  transition: opacity .4s ease;
+  //.opacity( 0 );
+}
+.backButton {
+  position:                                                 relative;
+  width:                                                    100%;
+  //top:                                                      201px;
+  height:                                                   51px;
+  background:                                               url( '../img/goBack.png ' ) no-repeat transparent center;
+  cursor:                                                   pointer;
+  .opacity( 0 );
+  //.animationSimple( animationIn forwards @time36 ease-out @delay36 1 );
+}
+
+#homeSection {
+  background:                                               url( '../img/bgVelvet.jpg' ) no-repeat transparent top left; 
+  //.opacity( 1 );
+  //z-index:                                                  30;
+  z-index:                                                  50;
+}
+.textoHome11 {
+  .absoluteTopLeft( 83px,43px );
+  width:                                                  244px;
+  height:                                                 14px;
+  background:                                             url( '../img/textoHome11.png' ) no-repeat transparent top left;
+  .opacity( 0 );
+  .animationSimple( animationIn forwards @time11 ease-out @delay11 1 );
+  //.animationSimpleDoble( animationLeftToRightOpacity forwards @time21 ease-out @delay21 1, animationOut forwards @time2 ease-out @delay2 1 );
+}
+.textoHome12 {
+  .absoluteTopLeft( 102px,43px );
+  width:                                                  240px;
+  height:                                                 12px;
+  background:                                             url( '../img/textoHome12.png' ) no-repeat transparent;
+  background-position:                                    center @backgroundVerticalStart;
+ //.opacity( 0 );
+  .animationSimple( animationBackgroundVertica forwards @time12 ease-out @delay12 1 );
+  //.animationSimpleDoble( animationLeftToRightOpacity forwards @time21 ease-out @delay21 1, animationOut forwards @time2 ease-out @delay2 1 );
+}
+
+@heightPlus:                                              41px;
+@heightPlusMenu:                                          @heightPlus + 9;
+.plus {
+  position:                                               relative;
+  display:                                                inline-block;
+  height:                                                 @heightPlus;
+  width:                                                  41px;
+  background:                                             url( '../img/plus.png' ) no-repeat transparent top center;
+}
+
+.homeMenu {
+  text-align:                                             center;
+  cursor:                                                 pointer;
+  .opacity( 0 );
+}
+.homeMenu1 {
+  .absoluteTopLeft( 187px,56px );
+  width:                                                  75px;
+  height:                                                 32px + @heightPlusMenu;
+  background:                                             url( '../img/textoHomeMenu1.png' ) no-repeat transparent bottom center;
+  //.animationSimple( animationIn forwards @time13 ease-out @delay13 1 );
+  //.animationSimpleDoble( animationIn forwards @time13 ease-out @delay13 1, animationHome1 forwards @time1 linear @delay1 infinite );
+}
+.homeMenu2 {
+  .absoluteTopRight( 212px,49px );
+  width:                                                  75px;
+  height:                                                 12px + @heightPlusMenu;
+  background:                                             url( '../img/textoHomeMenu2.png' ) no-repeat transparent bottom center;
+  //.animationSimple( animationIn forwards @time14 ease-out @delay14 1 );
+  .animationSimpleDoble( animationIn forwards @time13 ease-out @delay13 1, animationScaleBig forwards @time1 linear @delay14 infinite );
+}
+.homeMenu3 {
+  .absoluteBottomRight( 30px,8px );
+  width:                                                  72px;
+  height:                                                 32px + @heightPlusMenu;
+  background:                                             url( '../img/textoHomeMenu3.png' ) no-repeat transparent bottom center;
+  //.animationSimple( animationIn forwards @time15 ease-out @delay15 1 );
+  .animationSimpleDoble( animationIn forwards @time15 ease-out @delay15 1, animationScaleBig forwards @time1 linear @delay15 infinite );
+}
+
+.cta {
+    .absoluteTopLeft( 380px,@leftStartCta );
+    width:                                                178px;
+    height:                                               40px;
+    //left:                                                 ;
+    background:                                           url('../img/cta.png') no-repeat transparent center;
+    cursor:                                               pointer;
+    .opacity( 0 );
+    .animationSimple( animationLeftToRightOpacityCta forwards @time16 linear @delay16 1 );
+}
+
+#pive {
+  .absoluteBottomLeft( 2px, 5px );
+  width:                                                  31px;
+  height:                                                 26px;
+  .opacity( 0 );
+  background:                                             url( '../img/pive.png' ) no-repeat transparent top left;
+  .animationSimple( animationIn forwards @time17 ease-out @delay17 1);
+}
+
+#legalContainer {
+  overflow:                                               hidden;
+  width:                                                  760px;
+  height:                                                 12px;
+  line-height:                                            12px;
+  .absoluteBottomLeft( 2px,28px );
+  z-index:                                                10;
+  p {
+    width:                                                600px;
+    font-size:                                            10px;
+    font-family:                                          'Arial';
+    color:                                                white;
+    .absoluteTopLeft( 0,@startLegal );
+    .animationSimple( animationLegal forwards @time18 linear @delay18 1 );
+  }
+}
+//END  Home------
+
+//Motores Section----------------------------------
+#motoresSection {
+  //display:                                                  none;
+  background:                                               url( '../img/bgMotores1.jpg' ) no-repeat black top left;
+  .opacity( 0 );
+  //.transition( .5s all );
+  .backButton {
+    top:                                                      143px;
+    z-index:                                                  90;
+    //.animationSimple( animationIn forwards @time13 ease-out @delay13 1 );
+  }
+  &.botonMotor0 {
+    #salpicaderoBrillo{
+      .opacity( 0 );
+    }
+  }
+  &.botonMotor1 {
+    //lanzar animaciones agujas
+  }
+  &.botonMotor2 {
+    //lanzar animaciones agujas
+  }
+  &.botonMotor3 {
+    //cambiar opacidad Km
+  }
+  &.botonMotor4 {
+    //cambiar opacidad gasolinera
+  }
+  &.activeSection {
+    opacity: 1;
+    z-index: 60;
+  }
+} //motores
+
+#salpicaderoBrillo{
+  width:                                                  100%;
+  height:                                                 100%;
+  background:                                             url( '../img/bgMotores2.jpg' ) no-repeat black top left;
+  .transition( .5s all );
+  z-index:                                                10; 
+}
+
+#listaBotones {
+  .botonMotor {
+    background-color:                                   transparent;
+    background-repeat:                                  no-repeat;
+    // transform: skewX(-10deg);
+    .transition( .5s all );
+    &.active {
+      //cambiar bgColor y bg image
+    }
+  }//botonMotor
+}
+
+#botonMotor1 {
+  .texto {
+    //backgroun-image: ;
+  }
+}
+//END  Motores------
+
+//fullLink Section----------------------------------
+#fullLinkSection {
+  //display:                                                    none;
+  background:                                               url( '../img/bgFullLink.jpg' ) no-repeat transparent top left;
+  .opacity( 0 );
+  //.transition( .5s all );
+  .backButton {
+    top:                                                      143px;
+    z-index:                                                  90;
+    .animationSimple( animationIn forwards @time213 ease-out @delay213 1 );
+  }
+  &.boton1 {
+    #screen2 {
+      background-image:                                     url( '../img/screenBoton1.jpg' );
+    }
+  }
+  &.boton2 {
+    #screen2 {
+      background-image:                                     url( '../img/screenBoton2.jpg' );
+    }
+  }
+  &.boton3 {
+    #screen2 {
+      background-image:                                     url( '../img/screenBoton3.jpg' );
+    }
+  }
+  &.boton4 {
+    #screen2 {
+      background-image:                                     url( '../img/screen2.jpg' );
+    }
+  }
+  &.activeSection {
+    opacity: 1;
+    z-index: 60;
+  }
+  
+}
+
+#iphone {
+  .absoluteTopLeft( 168px, 122px );
+  width:                                                  76px;
+  height:                                                 204px;
+  .opacity( 0 );
+  background:                                             url( '../img/iphone.png' ) no-repeat transparent top left;
+  z-index:                                                40;
+  //.animationSimple( animationIn forwards @time21 ease-out @delay21 1);
+  .animationSimpleDoble( animationIn forwards @time21 ease-out @delay21 1, animationOut forwards @time2 ease-out @delay2 1 );
+}
+#cable {
+  .absoluteBottomLeft( @bottomStart, 138px ); //9px
+  width:                                                  44px;
+  height:                                                 120px;
+  .opacity( 0 );
+  background:                                             url( '../img/cable.png' ) no-repeat transparent top left;
+  z-index:                                                30;
+  //.animationSimple( animationIn forwards @time22 ease-out @delay22 1 );
+  //.animationSimpleDoble( animationIn forwards @time22 ease-out @delay22 1, animationBottomToTop forwards @time23 ease-out @delay23 1 );
+  .animationSimpleTriple( animationIn forwards @time22 ease-out @delay22 1, animationBottomToTop forwards @time23 ease-out @delay23 1, animationOut forwards @time2 ease-out @delay2 1 );
+}
+#iphoneSeat {
+  .absoluteBottomLeft( 0,0 );
+  width:                                                  100%;
+  height:                                                 100%;
+  .opacity( 0 );
+  background:                                             url( '../img/iphoneSeat.png' ) no-repeat transparent top left;
+  .animationSimple( animationIn forwards @time24 ease-out @delay24 1);
+  //.animationSimpleDoble( animationLeftToRightOpacity forwards @time21 ease-out @delay21 1, animationOut forwards @time2 ease-out @delay2 1 );
+}
+#screen {
+  .absoluteTopLeft( 35px, 57px );
+  width:                                                  217px;
+  height:                                                 163px;
+  .opacity( 0 );
+  background:                                             url( '../img/screen1.jpg' ) no-repeat transparent top left;
+  z-index:                                                35;
+  .animationSimple( animationIn forwards @time24 linear @delay24 1);
+ // .animationSimpleDoble( animationIn forwards @time24 linear @delay24 1, animationChangeBgScreen forwards @time2 ease-out @delay2 1 );
+}
+#screen2 {
+  .absoluteBottomLeft( 0,0 );
+  width:                                                  100%;
+  height:                                                 100%;
+  .opacity( 0 );
+  background:                                             url( '../img/screen2.jpg' ) no-repeat transparent top left;
+  .animationSimple( animationIn forwards @time210 ease-out @delay210 1);
+  //.animationSimpleDoble( animationLeftToRightOpacity forwards @time21 ease-out @delay21 1, animationOut forwards @time2 ease-out @delay2 1 );
+}
+
+.textoFullLink11 {
+  .absoluteTopLeft( 204px,0 );
+  width:                                                  100%;
+  height:                                                 14px;
+  background:                                             url( '../img/textoFullLink11.png' ) no-repeat transparent center top;
+  z-index:                                                90;
+  .opacity( 0 );
+  .animationSimple( animationIn forwards @time210 ease-out @delay210 1 );
+  //.animationSimpleDoble( animationLeftToRightOpacity forwards @time21 ease-out @delay21 1, animationOut forwards @time2 ease-out @delay2 1 );
+}
+.textoFullLink12 {
+  .absoluteTopLeft( 224px,0 );
+  width:                                                  100%;
+  height:                                                 9px;
+  background:                                             url( '../img/textoFullLink12.png' ) no-repeat transparent;
+  background-position:                                    center @backgroundVerticalStart;
+  z-index:                                                90;
+ //.opacity( 0 );
+  .animationSimple( animationBackgroundVertica forwards @time211 ease-out @delay211 1 );
+  //.animationSimpleDoble( animationLeftToRightOpacity forwards @time21 ease-out @delay21 1, animationOut forwards @time2 ease-out @delay2 1 );
+}
+
+@widthButtonContainer:                                  264px;
+.buttonContainer {
+  position:                                             relative;
+  width:                                                @widthButtonContainer;
+  margin:                                               0 auto;
+  top:                                                  197px;
+  overflow:                                             hidden;
+  z-index:                                              50;
+  .opacity(0);
+  .animationSimple( animationIn forwards @time212 ease-out @delay212 1 );
+}
+
+@borderTriggreColor:                                    #e1e1e1;
+
+.selectButton {
+  width:                                                100%;
+  overflow:                                             hidden;
+  position:                                             relative;
+  margin-bottom:                                        14px; 
+  .title {
+    float:                                              left;
+    width:                                              100%;
+    background-position:                                left 1px;
+    background-repeat:                                  no-repeat;
+    margin-bottom:                                      9px;
+    height:                                             22px;
+    //.transition( .9s all );
+  }
+  .information {
+    background-position:                                left top;
+    background-repeat:                                  no-repeat;
+    clear:                                              both;
+    height: 0;
+    .transition( .6s all );
+  }
+  .trigger {
+    position:                                           relative;
+    right:                                              2px;
+    float:                                              right;
+    width:                                              42px;
+    height:                                             22px;
+    cursor:                                             pointer;
+    background-color:                                   white;
+    .border-radius( 30% );
+    .box-shadow(inset 1px 0px 6px -1px); 
+  }
+  .circle {
+    .absoluteTopLeft( 0,-2px );
+    height:                                             18px;
+    width:                                              18px;
+    border:                                             2px solid @borderTriggreColor;
+    background-color:                                 white;
+    .box-shadow(-1px 0px 11px -1px rgba(0,0,0,0.63));
+    .border-radius( 50% );
+    .transition( .8s left );
+  }
+  &.active {
+    margin-bottom:                                      0;
+    .information {
+      height:                                           52px;
+    }
+    .trigger {
+      background-color:                                 #4dd865;
+      border-color:                                     #4dd865;
+    }
+    .circle {
+      left:                                             21px;
+    }
+  } //active
+} //selectButton
+#boton1 { 
+  .title{
+    background-image:                                   url( '../img/buttonTitle1.png' );
+  }
+  .information {
+    background-image:                                   url( '../img/buttonInformation1.png' );
+  }
+}
+#boton2 { 
+  .title{
+    background-image:                                   url( '../img/buttonTitle2.png' );
+  }
+  .information {
+    background-image:                                   url( '../img/buttonInformation2.png' );
+  }
+}#boton3 { 
+  .title{
+    background-image:                                   url( '../img/buttonTitle3.png' );
+  }
+  .information {
+    background-image:                                   url( '../img/buttonInformation3.png' );
+  }
+}#boton4 { 
+  .title{
+    background-image:                                   url( '../img/buttonTitle4.png' );
+  }
+  .information {
+    background-image:                                   url( '../img/buttonInformation4.png' );
+  }
+}
+
+
+//END fullLink
+//colorPack---------------------------------------------
+
+#colorPackSection {
+  //display:                                                    none;
+  //.opacity( 1 );
+  .opacity( 0 );
+  //.transition( .5s all );
+  &.color1 {
+    background:                                               url( '../img/bgVelvet.jpg' ) no-repeat transparent top left;
+    .nameColor {
+      background-image:                                       url( '../img/colorName1.png' );
+    }
+  } //color1
+  &.color2 {
+    background:                                               url( '../img/bgBismuth.jpg' ) no-repeat transparent top left;
+    .nameColor {
+      background-image:                                       url( '../img/colorName2.png' );
+    }
+  } //color2
+  &.color3 {
+    background:                                               url( '../img/bgRed.jpg' ) no-repeat transparent top left;
+    .nameColor {
+      background-image:                                       url( '../img/colorName3.png' );
+    }
+  } //color3
+  .backButton {
+    top:                                                      201px;
+    .animationSimple( animationIn forwards @time36 ease-out @delay36 1 );
+  }
+  &.activeSection {
+    opacity: 1;
+    z-index: 60;
+  }
+} //colorPackSection
+
+.textoColor11 {
+  .absoluteTopLeft( 266px,0 );
+  width:                                                  100%;
+  height:                                                 44px;
+  background:                                             url( '../img/textoColor11.png' ) no-repeat transparent center;
+ .opacity( 0 );
+  .animationSimple( animationIn forwards @time31 ease-out @delay31 1 );
+}
+
+
+@widthColor:                                                 20px;
+@heightColor:                                                @widthColor;
+@color1:                                                    #69494e;
+@color2:                                                    #b99d7f;
+@color3:                                                    #d72717;
+.colorButton {
+	position: 						                                   absolute;
+	display: 							                                   inline-block;
+	width: 								                                    @widthColor;
+	height: 							                                    @heightColor;
+	margin: 							                                    2px;
+	z-index: 							                                     20;
+	.opacity( 0 );
+	//.transition ( .8s all );
+	.insideColor {
+		position: 						                                  absolute;
+		top: 						                                         4px;
+		left: 							                                     4px;
+		width: 							                                     100%;
+		height: 						                                     100%;
+		cursor: 						                                     pointer;
+    border:                                                  2px solid white;
+		.border-radius( 50% );
+		z-index: 						                                     20;
+	}
+	&:after {
+		content: 						                                     '';
+		position: 						                                   absolute;
+		width: 							                                      @widthColor + 10;
+		height: 						                                      @heightColor + 10;
+		.border-radius( 50% );
+		border: 						                                      1px solid transparent;
+		background-color: 				                                transparent;
+		z-index: 						                                       10;
+		.transition( .8s all );
+	}
+}
+
+@bottomColors:                                            133px;
+#color1 {
+  .absoluteBottomLeft( @bottomColors,@leftStartColor1 ); //90
+  .animationSimple( animationLeftToRightOpacityColor1 forwards @time34 ease-out @delay34 1 );
+  .insideColor {
+    background-color:                                     @color1;
+  }
+   &.active:after {
+		border-color: 					                              @color1;
+	}
+}
+#color2 {
+  .absoluteBottomLeft( @bottomColors,@leftStartColor2 ); //140
+  .animationSimple( animationLeftToRightOpacityColor2 forwards @time33 ease-out @delay33 1 );
+  .insideColor {
+    background-color:                                     @color2;
+  }
+  &:hover:after {
+		border-color: 					                              @color2;
+	}
+}
+#color3 { 
+  .absoluteBottomLeft( @bottomColors,@leftStartColor3 ); //190
+  .animationSimple( animationLeftToRightOpacityColor3 forwards @time32 ease-out @delay32 1 );
+  .insideColor {
+    background-color:                                     @color3;
+  }
+  &:hover:after {
+		border-color: 					                              @color3;
+	}
+}
+
+.nameColor {
+  .absoluteTopLeft( 365px,0 );
+  height:                                                 21px; //el height de las letras mas altas
+  width:                                                  100%;
+  background-position:                                    center top;
+  background-repeat:                                      no-repeat;
+  .opacity( 0 );
+  .animationSimple( animationIn forwards @time35 ease-out @delay35 1 );
+}
+//colorPack---------------------------------------------
+
+
+
+//mascara-----------------------------------
+.overAll {
+  z-index:                                                100;
+}
+#logoSeat {
+  width:                                                  160px;
+  height:                                                 45px;
+  background:                                             url('../img/logo.png') no-repeat transparent;
+  .absoluteTopLeft( 0,0 );
+}
+#footer {
+  width:                                                  168px;
+  height:                                                 16px;
+  background:                                             url('../img/footer.png') no-repeat transparent;
+  .absoluteBottomRight( 0,0 );
+}
+#close {
+  width:                                                  31px;
+  height:                                                 30px;
+  background:                                             url('../img/close.png') no-repeat transparent;
+  cursor:                                                 pointer;
+  .absoluteTopRight( 10px,7px );
+  display: none;
+}
+#ad {
+  position:                                             relative;
+  overflow:                                             hidden;
+  display:                                              block;
+  left:                                                 0;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  // width:                                                @width;
+  // height:                                               @height;
+  border:                                                 @border solid white;
+  width:                                                  @widthBanner;
+  height:                                                 @heightBanner;
+  
+
+}
+
+#ad .animado.animado {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  animation-play-state: paused;
+}
