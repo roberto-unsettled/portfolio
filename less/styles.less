@@ -165,7 +165,7 @@ User Styles
     margin-bottom:          (@padding-container/2);
 }
 
-#welcome-section {
+.welcome-section {
     height:                 80vh;
     max-height:             592px;
     padding:                0 @padding-container;
@@ -183,12 +183,13 @@ User Styles
         top:                @topStart;
         opacity:            0;
         transition:         opacity .5s ease .2s, color .8s ease .8s;
-        &.animated {
-            opacity:        .7;
-            color:          @color2;
-            .animationSimple(animationTopBottomBounce forwards 1 @timeAnimation_1 ease-in-out @delayAnimation_1);
-        }
+       
     } //title
+    &.animated .title{
+        opacity:        .7;
+        color:          @color2;
+        .animationSimple(animationTopBottomBounce forwards 1 @timeAnimation_1 ease-in-out @delayAnimation_1);
+    }//animated welcome
     
 }//welcome-section
 
