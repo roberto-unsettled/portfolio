@@ -185,14 +185,33 @@ User Styles
         transition:         opacity .5s ease .2s, color .8s ease .8s;
        
     } //title
-    &.animated .title{
-        opacity:        .7;
-        color:          @color2;
-        .animationSimple(animationTopBottomBounce forwards 1 @timeAnimation_1 ease-in-out @delayAnimation_1);
-    }//animated welcome
-    
+    &.animated {
+        .cta-resume {
+            transform: scale(1);
+        }
+        .title{
+            opacity:        .7;
+            color:          @color2;
+            .animationSimple(animationTopBottomBounce forwards 1 @timeAnimation_1 ease-in-out @delayAnimation_1);
+        }//animated welcome
+    } //animated
+    .cta-resume {
+        .absoluteBottomRight(@padding-container, @padding-container);
+        background-color:  @color2;
+        padding-right: 26px;
+        color: @colorBgImgWelcome;
+        transform: scale(0);
+        transition: transform .3s ease .6s;
+        &:hover {
+            color: @colorBgImgWelcome;
+            transform: scale(1.1);
+        }
+    } 
 }//welcome-section
-
+.inner_welcome {
+    .size();
+    position: relative;
+}
 
 .section_introduction {
     padding:                    @padding-container @padding-container 0 @padding-container;
