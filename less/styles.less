@@ -149,9 +149,6 @@ User Styles
         background-color:   @color2;
     }
     color:                  @color3;
-    // &.animated {
-    // color:                  @color2;
-    // }
 }//key-word-color2
 
 .second_title { 
@@ -159,11 +156,33 @@ User Styles
     line-height:            90px;
     padding-bottom:         (@padding-container/2);
 }
+
 .text-regular {
     font-size:              25px;
     line-height:            32px;
     margin-bottom:          (@padding-container/2);
 }
+
+.cta-general {
+    text-decoration:                none;
+    font-weight:                    500;
+    transition:                     color .4s ease;
+    .border-radius (@cta-border-radious);
+    //.size(145px, auto);
+    height: auto;
+    padding:                        10px;
+    &::after{
+        content:                ' ';
+        .border-radiuses (@cta-border-radious, @cta-border-radious, 0, 0);
+        .absoluteBottomRight(0,0);
+        .size(20%,100%);
+        background-image:           url('../img/arrow-right.svg');
+        background-position:        center;
+        background-repeat:          no-repeat;
+        transition: width           .3s ease;
+    }//after
+    
+} //cta-general
 
 .welcome-section {
     height:                 80vh;
@@ -188,63 +207,66 @@ User Styles
     &.animated {
         .cta-resume {
             transform: scale(1);
-        }
+            &:hover {
+                color:                      @colorBgImgWelcome;
+                transform:                  scale(1.1);
+                &::after {
+                    background-position: center 7px;
+                }
+            }
+        }//cta-resume
         .title{
             opacity:        .7;
             color:          @color2;
             .animationSimple(animationTopBottomBounce forwards 1 @timeAnimation_1 ease-in-out @delayAnimation_1);
         }//animated welcome
     } //animated
-    .cta-resume {
-        .absoluteBottomRight(@padding-container, @padding-container);
-        background-color:  @color2;
-        padding-right: 26px;
-        color: @colorBgImgWelcome;
-        transform: scale(0);
-        transition: transform .3s ease .6s;
-        &:hover {
-            color: @colorBgImgWelcome;
-            transform: scale(1.1);
-        }
-    } 
 }//welcome-section
+
+.cta-resume {
+    .absoluteBottomRight(@padding-container, @padding-container);
+    background-color:               @color2;
+    padding-right:                  26px;
+    color:                          @colorBgImgWelcome;
+    transform:                      scale(0);
+    transition:                     transform .3s ease .1s;
+    &::after{
+        background-image:           url('../img/arrow-down.svg');
+        transition:                 background-position .3s ease .2s;
+    }//after
+} //cta-resume
+
 .inner_welcome {
     .size();
-    position: relative;
+    position:                       relative;
 }
 
 .section_introduction {
-    padding:                    @padding-container @padding-container 0 @padding-container;
+    padding:                        @padding-container @padding-container 0 @padding-container;
 }
 
 #microsites {
-    position:                   relative;
-    overflow:                   hidden;
-    background-color:           @color4;
+    position:                       relative;
+    overflow:                       hidden;
+    background-color:               @color4;
 }
 
 .title-works-container {
-    display:                    inline-block;
-    position:                   relative;
+    display:                        inline-block;
+    position:                       relative;
 }
 
 .title-works {
-    display:                    block;
-    position:                   absolute;
-    top:                        0;
-    left:                       0;
-    bottom:                     0;
-    width:                      100%; /* line-height of .wrapper div:first-child span */
-    overflow:                   hidden;
-    white-space:                nowrap;
+    .absoluteTopLeft();
+    bottom:                         0;
+    width:                          100%; /* line-height of .wrapper div:first-child span */
+    overflow:                       hidden;
+    white-space:                    nowrap;
     h2 {
         transform:rotate(-90deg) translate(-50%, 50%);
         .absoluteBottomLeft(-260px, -18px);
-        position:                   absolute;
-        left:                       -18px;
+        .size();
         font-size:                  84px;
-        width:                      100%;
-        height:                     100%;
         text-align:                 center;
         line-height:                52%;
         color:                      @color2;
@@ -270,32 +292,6 @@ User Styles
     //transition:                     font-size .4s ease, line-height .3s ease;
 }
 
-.cta-general {
-    text-decoration:                none;
-    font-weight:                    500;
-    transition:                     color .4s ease;
-    .border-radius (@cta-border-radious);
-    //.size(145px, auto);
-    height: auto;
-    padding:                        10px;
-    &::after{
-        content:                ' ';
-        .border-radiuses (@cta-border-radious, @cta-border-radious, 0, 0);
-        .absoluteBottomRight(0,0);
-        .size(20%,100%);
-        background-image:           url('../img/arrow-right.svg');
-        background-position:        center;
-        background-repeat:          no-repeat;
-        transition: width           .3s ease;
-    }//after
-    &:hover  {
-        color:                      @color2;
-        &::after{
-            width:                  15%;
-        }
-    }//hover
-} //cta-general
-
 .cta-microsites {
     width:                          145px;
     @variable-color:                @color1;
@@ -305,6 +301,12 @@ User Styles
     &::after{
         background-color:           lighten(spin(@variable-color, 180), 10%);
     }//after
+    &:hover  {
+        color:                      @color2;
+        &::after{
+            width:                  15%;
+        }
+    }//hover
 } //cta-microsites
 
 
@@ -336,10 +338,11 @@ User Styles
         } //h2
     }//title-works
     .list-key-word-element {
-        position:                       relative;
-        display:                        inline-block;
+        position:                   relative;
+        display:                    inline-block;
     }//list-keyword-element
 }//microsites
+
 #banners {
     @variable-color:                @color4;
     position:                       relative;
@@ -414,21 +417,13 @@ User Styles
     .playButton {
         transform:                      scale(1);
         &:hover {
-            transform:                      scale(1.2);
+            transform:                  scale(1.2);
         }
     }
 }//animated
 
 .cta-banner {
-    // .absoluteTopRight(50%, 60px);
     display: none;
-    // width:                          109px;
-    // @variable-color:                @color5;
-    // color:                          @variable-color;
-    // background-color:               spin(@variable-color, -17);
-    // &::after{
-    //     background-color:           lighten(spin(@variable-color, -17), 10%);
-    // }//after
 } //cta-microsites
 
 .overlay {
@@ -457,7 +452,106 @@ User Styles
     cursor:                             pointer;
 }
 .htmlContainer {
-    z-index:                            80;
     .absoluteTopLeft(50%,50%);
     transform: translate(-50%, -50%);
+    z-index:                            80;
 }
+#newsletters {
+    @variable-color:                @color4;
+    position:                       relative;
+    overflow:                       hidden;
+    //background-color:               @color5;
+    background-color:               spin(@variable-color, 240);
+    padding-right: @padding-container;
+    .title-works h2 {
+        bottom:                     -220px;
+        letter-spacing:             26px;
+    }
+}//#newsletters
+
+.newsletters-list-container {
+    padding-top:                    @padding-container;
+    padding-bottom:                 @padding-container;
+}
+
+.newsletters-list {
+    display:                        flex;
+    justify-content:                space-between;
+    align-items:                    center;
+}
+
+.newsletters-list-element {
+    .size(30%, 400px);
+    position:                       relative;
+}
+
+.img-newsletter-container {
+    .size();
+    .absoluteTopLeft();
+    background-position:            center 0%;
+    background-size:                100% auto;
+    background-repeat:              no-repeat;
+    background-color:               transparent;
+    transition:                     background-position .5s ease .2s;
+    cursor:                         pointer;
+    &:hover {
+        background-position:        center 100%;
+    }
+} //img-newsletter-container
+
+.newsletters-list-element-1 {
+    .img-newsletter-container {
+        background-image:           url('../img/newsletter-desigual.jpg');
+    }
+}
+.newsletters-list-element-2 {
+    .img-newsletter-container {
+        background-image:           url('../img/newsletter-cupra.jpg');
+    }
+}
+.newsletters-list-element-3 {
+    .img-newsletter-container {
+        background-image:           url('../img/newsletter-mc.jpg');
+    }
+}
+
+.talk-container {
+    padding-bottom:                 @padding-container;
+}
+.big_mail{
+    display:                        block;
+    font-size:                      63px;
+    line-height:                    80px;
+    transform:                      scale(1, 1.6);
+    position:                       relative;
+    width:                          100%;
+    text-align:                     center;
+    cursor:                         pointer;
+    &::before {
+        .absoluteTopLeft();
+        .size(100%,0);
+        content:                    "copied! see you soon ;D";
+        overflow:                   hidden;
+        font-size:                  30px;
+        line-height:                80px;
+        text-align:                 center;
+        z-index:                    0;
+        opacity:                    0;
+        transition:                 opacity .4s, height .4s;
+    }
+    &.copied{
+        &::before {
+           height:                  100%;
+           opacity:                 0.97;
+           z-index:                 20;
+           background-color:        @color4;
+        }
+    }
+    &::after {
+        .absoluteBottomLeft(20px,0);
+        .size(100%,16px);
+        content:                    "tap to copy";
+        font-size:                   12px;
+        opacity:                     0.5;
+   }
+}//big_mail

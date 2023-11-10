@@ -43,37 +43,36 @@ var waypoints = $('#welcome-section, #banners').waypoint({
     $('#' + this.element.id).addClass('animated')
     //console.log(this.element.id + ' hit')
   }
-})
+  })
 
-var waypoints = $('#section_introduction').waypoint({
-  handler: function(direction) {
-    var $keyWords = $('#' + this.element.id).find('.text-regular');
-    animatingCSS($keyWords);
-    //console.log(this.element.id + ' hit')
-  },
-  offset: '70%'
-})
+  var waypoints = $('#section_introduction').waypoint({
+    handler: function(direction) {
+      var $keyWords = $('#' + this.element.id).find('.text-regular');
+      animatingCSS($keyWords);
+      //console.log(this.element.id + ' hit')
+    },
+    offset: '70%'
+  })
 
-var waypoints = $('#microsites, #banners').waypoint({
-  handler: function(direction) {
-    var $this = $('#' + this.element.id);
-    $this.addClass('animated');
-    animatingCascade($this.find('.list-key-word'));
-    //console.log(this.element.id + ' hit')
-  },
-  offset: '75%'
-})
-
+  var waypoints = $('#microsites, #banners').waypoint({
+    handler: function(direction) {
+      var $this = $('#' + this.element.id);
+      $this.addClass('animated');
+      animatingCascade($this.find('.list-key-word'));
+      //console.log(this.element.id + ' hit')
+    },
+    offset: '75%'
+  })
   
 });
 
-// $('#emailToCopy').on( "click tap",function() {
-//   var copyText = 'roberto.unsettled@gmail.com';
-//   navigator.clipboard.writeText(copyText);
+$('#emailToCopy').on( "click tap",function() {
+  var copyText = 'roberto.unsettled@gmail.com';
+  navigator.clipboard.writeText(copyText);
 
-//   $('#emailToCopy').addClass('copied');
-//   setTimeout(function() {
-//     $('#emailToCopy').removeClass('copied');
-//    }, 2000);
+  $('#emailToCopy').addClass('copied');
+  setTimeout(function() {
+    $('#emailToCopy').removeClass('copied');
+   }, 2000);
 
-// });
+});
