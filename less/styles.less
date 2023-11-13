@@ -1,7 +1,7 @@
 //main: globals.less
 
 body {
-  color: @color1;
+  color: @color3;
 }
 p {
     font-weight: 300;
@@ -92,16 +92,13 @@ User Styles
 }
 .container-section {
     padding-bottom: @padding-container;
+    position:           relative;
 }
-.bg-color-1 {
-    background-color: @color1;
-}
+
 .bg-color-2 {
-    background-color: @color2;
+    background-color:   @color2;
 }
-.bg-color-3 {
-    background-color: @color3;
-}
+
 .cover {
     padding: 0;
 }
@@ -188,7 +185,7 @@ User Styles
     height:                 80vh;
     max-height:             592px;
     padding:                0 @padding-container;
-    background:             url('../img/lache_victoria.png') no-repeat transparent center top;
+    background:             url('../img/lache_victoria.png') no-repeat @colorBgImgWelcome center top;
     background-size:        cover;
     filter:		            @filterStart;
     .animationSimple(animationSepia forwards 1 @timeAnimation_sepia ease-in-out @delayAnimation_sepia);
@@ -280,6 +277,7 @@ User Styles
 }
 .text-container-work {
     padding:                        10px 30px 0 20px;
+    position:                       relative;
 
 }
 .description-work {
@@ -294,7 +292,7 @@ User Styles
 
 .cta-microsites {
     width:                          145px;
-    @variable-color:                @color1;
+    @variable-color:                @color4;
     color:                          @variable-color;
     .absoluteBottomRight(17px, 60px);
     background-color:               spin(@variable-color, 180);
@@ -329,12 +327,13 @@ User Styles
 
 .list-key-word-awards {
     margin-top:                     6px;
+    height: auto;
 }
 .microsites {
     .title-works {
         h2 {
-            letter-spacing:         46px;
-            bottom:                 -262px;
+            letter-spacing:         85px;
+            bottom:                 -438px;
         } //h2
     }//title-works
     .list-key-word-element {
@@ -360,12 +359,10 @@ User Styles
     .text-container-work {
         padding-left:               0;
     }
-    .big-banner {
-        .size(970px,250px);
-    }
+
     .title-works h2 {
-        bottom:                     -407px;
-        letter-spacing:             128px;
+        bottom: -419px;
+        letter-spacing: 132px;
     }
     .list-key-word-technology {
         .absoluteTopRight(@paddingBanners,0);
@@ -381,26 +378,35 @@ User Styles
     overflow:                       hidden;
 }
 .big-banner-text-container {
-        position:                   relative;
+    position:                       relative;
+}
+
+.big-banner-container {
+    .big-banner {
+        .size(970px,250px);
+    }
     .list-key-word-technology{
-        //position:                   absolute;
-        //top:                        15px;
-        right:                      85px;
-        width:                      40%;
-        text-align:                 right;
-        
+        width:                      auto;
+        text-align:                 left;
+        // top: 280px;
+        position:                   relative;
+        top:                        0;
+        right:                      0;
         
         .list-key-word-element {
             display:                inline-block;
         }
     }
-}
+}//big-banner-container
+
+
 
 .banners-list-element {
     position:                       relative;
     overflow:                       hidden;
     padding:                        @paddingBanners 0;
 }
+
 .playButton {
     .size(100%,100%);
     .absoluteTopLeft(0,0);
@@ -456,7 +462,7 @@ User Styles
     transform: translate(-50%, -50%);
     z-index:                            80;
 }
-#newsletters {
+.newsletters {
     @variable-color:                @color4;
     position:                       relative;
     overflow:                       hidden;

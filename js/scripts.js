@@ -7,16 +7,16 @@ $(function() {
         bannerUrl = $this.attr('data-banner-url');
 
     iframeHTML= '<iframe id="inlineFrameExample" width="'+ bannerW +'" height="'+ bannerH +'" src="'+ bannerUrl +'"></iframe>';
-    $('#banners-list-container .overlay .htmlContainer').html(iframeHTML);
-    $('#banners-list-container .overlay').addClass('visible');
+    $('#overlay .htmlContainer').html(iframeHTML);
+    $('#overlay').addClass('visible');
 
      console.log('click' + bannerH);
   });
 
   
   $('.backGround').on('click',function(){
-    $('#banners-list-container .overlay').removeClass('visible');
-    $('#banners-list-container .overlay .htmlContainer').html('');
+    $('#overlay').removeClass('visible');
+    $('#overlay .htmlContainer').html('');
     //two clases, one to happen other to appear maybe
   });
 
