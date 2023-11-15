@@ -3,10 +3,11 @@
     .size(176px, 60px);
     line-height:                        38px;
     font-size:                          21px;
+    right:                              5px;
 }
 .cta-microsites {
-    bottom:                             unset;
-    top:                                10px;
+    bottom:                             12px;
+    top:                                unset;
     right:                              20px;
 }
 .section_introduction {
@@ -39,7 +40,8 @@
 .microsites, .banners, .newsletters {
     .title-works {
         h2{
-            letter-spacing:             36px;
+            //letter-spacing:             36px;
+            letter-spacing:             unset;
             bottom:                     0;
         }//h2
     } 
@@ -49,9 +51,20 @@
     padding:                            0 0 20px 20px;
 }
 
-.banners .list-key-word-technology {
-    width:                              310px;   
+.banners {
+    .list-key-word-technology {
+        width:                          310px;
+    } 
+    .big-banner {
+        width:                          678px;
+        height:                         174px;
+    }
+}//banners
+.size-warning {
+    display:                            inline-block;
 }
+
+
 .newsletters {
     padding-right:                      0;
 }
@@ -59,8 +72,8 @@
     justify-content:                    space-evenly;
 }
 .newsletters-list-element {
-    height: 260px;
-    width: 32%;
+    height:                             260px;
+    width:                              32%;
 }
 .big_mail {
     font-size:                          43px;

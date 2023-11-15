@@ -158,6 +158,10 @@ User Styles
     font-size:              25px;
     line-height:            32px;
     margin-bottom:          (@padding-container/2);
+    &:last-child {
+        margin-bottom:       0;
+      }
+      
 }
 
 .cta-general {
@@ -281,12 +285,16 @@ User Styles
 
 }
 .description-work {
-    line-height:                    124%;
-    margin-bottom:                  9px;
+    //line-height:                    124%;
+    margin-bottom:                  15px;
+    line-height:                    140%;
+    font-size:                      15px;
 }
 
 .title-work {
-    font-size:                      30px;
+    //font-size:                      30px;
+    font-size:                      44px;
+    margin-bottom:                  3px;
     //transition:                     font-size .4s ease, line-height .3s ease;
 }
 
@@ -322,6 +330,7 @@ User Styles
     .key-word {
         padding-top:                3px;
         padding-bottom:             3px;
+        margin-bottom:              3px;
     }
 } //list-key-word
 
@@ -379,6 +388,10 @@ User Styles
 }
 .big-banner-text-container {
     position:                       relative;
+}
+.size-warning {
+    font-size:                      14px;
+    display:                        none;
 }
 
 .big-banner-container {
