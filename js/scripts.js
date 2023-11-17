@@ -16,7 +16,8 @@ $(function() {
   
   $('.backGround').on('click',function(){
     $('#overlay').removeClass('visible');
-    $('#overlay .htmlContainer').html('');
+    $('#overlay .htmlContainer').html(''); 
+
     //two clases, one to happen other to appear maybe
   });
 

@@ -42,6 +42,7 @@
         h2{
             //letter-spacing:             36px;
             letter-spacing:             unset;
+            padding:                    40px 0px 30px 0px;
             bottom:                     0;
         }//h2
     } 
@@ -55,10 +56,13 @@
     .list-key-word-technology {
         width:                          310px;
     } 
-    .big-banner {
-        width:                          678px;
-        height:                         174px;
+    .img-work-container {
+        //.size(100%,350px);
+        &.big-banner {
+            .size(680px,180px);
+        }
     }
+    
 }//banners
 .size-warning {
     display:                            inline-block;
@@ -72,9 +76,9 @@
     justify-content:                    space-evenly;
 }
 .newsletters-list-element {
-    height:                             260px;
-    width:                              32%;
+    .size(32%,260px);
 }
+
 .big_mail {
     font-size:                          43px;
 }

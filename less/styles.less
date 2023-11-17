@@ -80,18 +80,18 @@ User Styles
 ========================================================================== */
 
 #total-wrapper {
-    background-color: @colorBgOut;
-    font-family: 'Montserrat', sans-serif;
+    background-color:   @colorBgOut;
+    font-family:        'Montserrat', sans-serif;
 }
 .site-wrapper {
-    margin: 0 auto;
-    max-width: (@max-width-site - (@padding-container * 2));
+    margin:             0 auto;
+    max-width:          (@max-width-site - (@padding-container * 2));
 }
 .site-wrapper-inner {
-    color: @color3;
+    color:              @color3;
 }
 .container-section {
-    padding-bottom: @padding-container;
+    padding-bottom:     @padding-container;
     position:           relative;
 }
 
@@ -137,7 +137,7 @@ User Styles
         background-color:   @color3;
     }
     &.animated {
-    color:                  @color2;
+        color:              @color2;
     }
 }//key-word-color
 
@@ -320,6 +320,10 @@ User Styles
     position:                       relative;
     display:                        block;
     cursor:                         pointer;
+    background-position:            center;
+    background-repeat:              no-repeat;
+    background-size:                contain;
+    background-color:               transparent;
 }
 
 .img-work {
@@ -364,14 +368,17 @@ User Styles
 
     .img-work-container {
         .size(320px,480px);
+        &.big-banner {
+            .size(970px, 250px);
+        }
     }
     .text-container-work {
         padding-left:               0;
     }
 
     .title-works h2 {
-        bottom: -419px;
-        letter-spacing: 132px;
+        bottom:                     -450px;
+        letter-spacing:             143px;
     }
     .list-key-word-technology {
         .absoluteTopRight(@paddingBanners,0);
@@ -390,8 +397,17 @@ User Styles
     position:                       relative;
 }
 .size-warning {
-    font-size:                      14px;
+    font-size:                      19px;
     display:                        none;
+}
+.banner-1 {
+    background-image:               url('../img/banner_1.png');
+}
+.banner-2 {
+    background-image:               url('../img/banner_2.png');
+}
+.banner-3 {
+    background-image:               url('../img/banner_3.png');
 }
 
 .big-banner-container {
@@ -442,19 +458,21 @@ User Styles
 }//animated
 
 .cta-banner {
-    display: none;
+    display:                            none;
 } //cta-microsites
 
 .overlay {
     .size(100%,100%);
     .absoluteTopLeft(0,0);
-    display: none;
+    display:                            none;
     opacity:                            0;
     transition:                         opacity .3s ease;
     z-index:                            50;
     &.visible{
         display:                        block;
         opacity:                        1;
+        position: fixed; 
+        overflow-y:scroll;
     }
 }//overlay
 
@@ -483,8 +501,8 @@ User Styles
     background-color:               spin(@variable-color, 240);
     padding-right: @padding-container;
     .title-works h2 {
-        bottom:                     -220px;
-        letter-spacing:             26px;
+        bottom:                     -235px;
+        letter-spacing:             29px;
     }
 }//#newsletters
 
