@@ -211,14 +211,14 @@ User Styles
             &:hover {
                 color:                      @colorBgImgWelcome;
                 transform:                  scale(1.1);
-                &::after {
-                    background-position: center 7px;
-                }
+                // &::after {
+                //     background-position: center 7px;
+                // }
             }
         }//cta-resume
         .title{
-            opacity:        .7;
-            color:          @color2;
+            opacity:                .7;
+            color:                  @color2;
             .animationSimple(animationTopBottomBounce forwards 1 @timeAnimation_1 ease-in-out @delayAnimation_1);
         }//animated welcome
     } //animated
@@ -227,13 +227,15 @@ User Styles
 .cta-resume {
     .absoluteBottomRight(@padding-container, @padding-container);
     background-color:               @color2;
-    padding-right:                  26px;
+    padding-right:                  42px;
     color:                          @colorBgImgWelcome;
     transform:                      scale(0);
     transition:                     transform .3s ease .1s;
     &::after{
         background-image:           url('../img/arrow-down.svg');
-        transition:                 background-position .3s ease .2s;
+        width:                      25%;
+        background-position-x:      -2px;
+        //transition:                 background-position .3s ease .2s;
     }//after
 } //cta-resume
 
@@ -270,7 +272,7 @@ User Styles
         font-size:                  84px;
         text-align:                 center;
         line-height:                52%;
-        color:                      @color2;
+        color:                      white;
     }
 } //title-works
 .microsite-list-element {
@@ -300,17 +302,19 @@ User Styles
 
 .cta-microsites {
     width:                          145px;
-    @variable-color:                @color4;
-    color:                          @variable-color;
+    //@variable-color:                @color4;
+    color:                          @color4;
+    //color:                          @variable-color;
     .absoluteBottomRight(17px, 60px);
-    background-color:               spin(@variable-color, 180);
+    //background-color:               spin(@variable-color, 180);
+    background-color:               @color4Button;
     &::after{
-        background-color:           lighten(spin(@variable-color, 180), 10%);
+        background-color:           lighten(spin(@color4Button, 0), 10%);
     }//after
     &:hover  {
         color:                      @color2;
         &::after{
-            width:                  15%;
+            width:                  18%;
         }
     }//hover
 } //cta-microsites
@@ -356,11 +360,13 @@ User Styles
 }//microsites
 
 #banners {
-    @variable-color:                @color4;
+    //@variable-color:                @color4;
+    @variable-color:                @color5;
+    
     position:                       relative;
     overflow:                       hidden;
-    //background-color:               @color5;
-    background-color:               spin(@variable-color, -17);
+    background-color:               @variable-color;
+    //background-color:               spin(@variable-color, -30);
 }//#Banners
 
 @paddingBanners:                    (@padding-container/4);
@@ -494,12 +500,13 @@ User Styles
     z-index:                            80;
 }
 .newsletters {
-    @variable-color:                @color4;
+    @variable-color:                @color6;
     position:                       relative;
     overflow:                       hidden;
     //background-color:               @color5;
-    background-color:               spin(@variable-color, 240);
-    padding-right: @padding-container;
+    //background-color:               spin(@variable-color, 240);
+    background-color:               @variable-color;
+    padding-right:                  @padding-container;
     .title-works h2 {
         bottom:                     -235px;
         letter-spacing:             29px;
